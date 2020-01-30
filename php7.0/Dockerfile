@@ -12,6 +12,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN yum update && yum install wget -y
 RUN wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz \
     && tar zxf lnmp1.6.tar.gz && cd lnmp1.6 && rm -f lnmp1.6.tar.gz \
-    && LNMP_Auto="y" DBSelect="0" PHPSelect="9" SelectMalloc="1" CheckMirror="n" ./install.sh lnmp  
+    && LNMP_Auto="y" DBSelect="0" PHPSelect="6" SelectMalloc="1" CheckMirror="n" ./install.sh lnmp  
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
