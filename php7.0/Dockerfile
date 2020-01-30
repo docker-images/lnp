@@ -9,8 +9,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
-RUN yum clean all && yum clean metadata && yum clean dbcache && yum makecache && yum update -y \
-    && yum install -y wget \
+RUN yum install -y wget \
     && yum clean all && rm -rf /var/cache/yum/*
 RUN wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz \
     && tar zxf lnmp1.6.tar.gz && cd lnmp1.6 && rm -f lnmp1.6.tar.gz \
